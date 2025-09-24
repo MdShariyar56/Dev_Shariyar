@@ -4,9 +4,212 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev_Shariyar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <h1>Hellow
-    </h1>
+<body class="bg-blue-200">
+
+    <div id="navbar" class="navbar bg-base-100 border-b-2 fixed w-full z-50 shadow transition-transform duration-300 animate-gradient">
+        <div class="container mx-auto flex justify-between items-center py-3 px-4">
+            <div class="flex items-center gap-3">
+                <div class="lg:hidden">
+                    <button id="menu-btn" class="btn btn-ghost p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"/>
+                        </svg>
+                    </button>
+                </div>
+                <a class="btn btn-ghost text-2xl font-bold">I'm <span class="text-orange-400">Shariyar</span></a>
+            </div>
+
+            <div class="hidden lg:flex">
+                <ul id="nav-links" class="menu menu-horizontal px-1 flex gap-4 text-xl font-bold">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#skill-tools">Skill And Tools</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#edu">Educationa</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <button class="btn rounded-full bg-white hover:bg-white text-black">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"></path>
+                    </svg>
+                </button>
+
+
+
+                
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="lg:hidden hidden bg-base-100 shadow-md">
+            <ul class="menu menu-vertical p-4 gap-2">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about-us">About Us</a></li>
+                <li><a href="#skill-tools">Skill And Tools</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#edu">Educationa</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="home" class="py-20 flex flex-col items-center bg-gray-200 ">
+        <div class="flex flex-col md:flex-row md:space-x-8 items-center max-w-6xl w-full px-4">
+            <div class="flex-1 lg:px-4 text-center md:text-left">
+                <h2 class="text-3xl md:text-4xl font-bold py-3 ">
+                    Hi, I'm <span class="text-orange-400 color-change-animation">Shariyar</span>
+                </h2>
+                <p class="mt-2 text-gray-700 font-medium">
+                    I'm a frontend developer specializing in React.js. I also work with Node.js, Express.js, and MongoDB. 
+                    Passionate about building efficient and scalable web applications.
+                </p>
+                <a href="/assets/CV%20Resume-jkkK23EI.pdf" download="res./asset/1744726354462_3-removebg-preview.pngume.pdf">
+                    <button class="btn mt-5 rounded-full text-xl px-3 py-3 bg-gray-400  animate-gradient">
+                        Download Resume
+                    </button>
+                </a>
+            </div>
+
+            <div class="flex-1 mt-8 md:mt-0 flex justify-center md:justify-end">
+                <img src="./asset/Gemini_Generated_Image_6orxur6orxur6orx-removebg-preview.png" 
+                    alt="Shariyar Kobir" 
+                    class="w-96 bg-gray-205 h-auto rounded-full shadow-sm  shadow-lg transition-transform duration-300 hover:scale-105">
+            </div>
+        </div>
+    </section>
+
+    <section id="about-us" class="py-10 bg-gray-100 ">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl text-center font-bold py-4"><i class="fa-solid fa-address-book text-orange-400 mr-4"></i><span class="color-change-animation">About Me</span></h2>
+            
+            <div class="flex flex-col md:flex-row md:space-x-8 space-y-12 md:space-y-0 md:gap-6 b items-center mt-8">
+                <div class="flex-1 lg:px-4 text-center md:text-left order-1 md:order-2">
+                    <p class="text-orange-400 font-bold">Hello There, I am</p>
+                    <h2 class="text-3xl md:text-4xl py-2 font-bold">Shariyar <span class="text-orange-400">Kobir</span></h2>
+                    <p class="mt-2 text-gray-700 font-medium">
+                        I'm a frontend developer specializing in React.js. I also work with Node.js, Express.js, and MongoDB. 
+                        Passionate about building efficient and scalable web applications.
+                    </p>
+
+                    <ul class="mt-4 space-y-2 text-left">
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 512 512">
+                                <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
+                            </svg>
+                            <span class="font-bold">React.js</span> - JavaScript library for UI development
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 512 512">
+                                <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
+                            </svg>
+                            <span class="font-bold">Node.js</span>, <span class="font-bold">Express.js</span> - Backend development
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 512 512">
+                                <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
+                            </svg>
+                            <span class="font-bold">MongoDB</span> - Database management
+                        </li>
+                    </ul>
+
+                    <div class="mt-6 flex justify-center md:justify-start gap-3">
+                        <a href="https://github.com/MdShariyar56" target="_blank" class="btn btn-md rounded-full bg-gray-500 hover:bg-black text-white px-2 py-1"><i class="fa-brands fa-square-github "></i>GitHub</a>
+                        <a href="https://www.facebook.com/md.shariyar.kobir.2024" target="_blank" class="btn btn-md rounded-full bg-blue-500 hover:bg-black text-white px-2 py-1"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+                        <a href="https://www.facebook.com/md.shariyar.kobir.2024" target="_blank" class="btn btn-md rounded-full bg-blue-500 hover:bg-black text-white px-2 py-1"><i class="fa-brands fa-facebook"></i>Facebook</a>
+                    </div>
+                </div>
+
+                <div class="flex-1 flex justify-center md:justify-start order-2 md:order-1">
+                    <img src="./asset/1744726354462_3-removebg-preview.png" 
+                        alt="Shariyar Kobir" 
+                        class="w-96 h-auto rounded-full shadow-lg transition-transform duration-300 hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skill-tools" class="bg-gray-100 py-12 transition-colors duration-500 relative overflow-hidden">
+        <div class="relative z-10 max-w-6xl mx-auto px-6">
+            <h1 class="text-4xl font-bold text-center mb-8 "><i class="fa-solid fa-laptop-code text-blue-400 mr-4"></i><span class="color-change-animation">My Skills</span></h1>
+            <div id="skills-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
+        </div>
+    </section>
+
+
+<section id="projects" class="py-16 flex justify-center bg-gray-200 ">
+  <div class="relative max-w-6xl w-full p-6 rounded-xl overflow-hidden border-4 border-black animated-border bg-black animate-gradient ">
+    <h1 class="text-4xl font-bold text-center mb-12  "><i class="fa-solid fa-briefcase mr-4 text-green-800"></i><span class="color-change-animation">My Projects</span></h1>
+    <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- JS দিয়ে project cards আসবে -->
+    </div>
+  </div>
+</section>
+ 
+   <!--Education-->
+   <section id="edu" class="py-16 bg-gray-300 ">
+    <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 "><i class="fa-solid fa-graduation-cap mr-4"></i><span class="color-change-animation">My Education</span></h2>
+        <div id="education-container" class="grid grid-row-1 md:grid-row-2 lg:grid-row-3 gap-8">
+            </div>
+    </div>
+</section>
+ <!--Contact section-->
+   <section>
+    <div>
+        <div class="my-9 bg-blue-200">
+            <div class="mb-3 py-2">
+                <h2 class="text-4xl font-bold text-center py-3 " id="contact"><i class="fa-solid fa-address-card"></i> <span class="color-change-animation mr-4">Contact</span></h2>
+                <p class="text-center text-2xl"> Email: <span class="text-orange-400">shariyarkobir2005@gmail.com</span></p>
+            </div>
+            <div class="shadow-lg rounded-lg shadow-slate-400 mx-auto lg:w-1/2 p-4 w-11/12 bg-white">
+                <form id="contact-form" class="mt-6">
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="grid lg:grid-cols-2 gap-6 ">
+                            <div>
+                                <label for="name" class="block text-black text-xl">Name</label>
+                                <input type="text" id="name" name="name"
+                                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-orange-500 bg-[#ebeaea]"
+                                    placeholder="Enter your name" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-black text-xl">Email</label>
+                                <input type="email" id="email" name="email"
+                                    class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-orange-500 bg-[#ebeaea]"
+                                    placeholder="Enter your email" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-black text-xl">Message</label>
+                            <textarea id="message" name="message" rows="4"
+                                class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring focus:ring-orange-500 bg-[#ebeaea]"
+                                placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit"
+                            class="btn btn-block bg-orange-400 hover:bg-blue-400 text-white font-bold text-2xl py-2 color-change-animation">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <footer class="bg-black py-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-white text-sm md:text-base">
+                Developed By <span class="font-semibold color-change-animation">Shariyar Kobir</span> | All rights reserved.
+            </h2>
+        </div>
+    </footer>
+<script src="./script.js"></script>
 </body>
 </html>
