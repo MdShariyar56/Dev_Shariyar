@@ -1,0 +1,59 @@
+
+html {
+            scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;
+}     
+   /* Outer div border animation */
+.border-gradient {
+  border-image: linear-gradient(90deg, #a27676, #df974e, #baba44, #1b891b, #19b2b2, #0000ff, #ff00ff, #ff0000) 1;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background: linear-gradient(270deg, #de6868, #e2e297, #00ffff, #8080f6, #ff00ff);
+  background-size: 400% 400%;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  animation: gradient-move 10s linear infinite;
+}
+  /* এখানে CSS কোড যুক্ত করুন */
+.color-change-animation {
+    animation: colorChange 7s linear infinite;
+        }
+
+    @keyframes colorChange {
+            0% { color: red; }
+            25% { color: green; }
+            50% { color: blue; }
+            75% { color: yellow; }
+            100% { color: red; }
+        }
+
+   
+
+
+
+
+
+
+
+
