@@ -39,44 +39,46 @@ menuItems.forEach(item => {
   });
 });
 
+const words = ["Web Developer", "Frontend Developer", "React Developer"];
+let i = 0;
+let j = 0;
+let deleting = false;
+
+const dynamicText = document.getElementById("dynamic-text");
+
+function type() {
+  const currentWord = words[i];
+  let speed = 100; // typing speed (fast)
+
+  if (!deleting) {
+    dynamicText.textContent = currentWord.slice(0, j + 1);
+    j++;
+    if (j === currentWord.length) {
+      deleting = true;
+      speed = 1000; // pause at end
+      setTimeout(type, speed);
+      return;
+    }
+  } else {
+    dynamicText.textContent = currentWord.slice(0, j - 1);
+    j--;
+  }
+
+  if (deleting && j === 0) {
+    deleting = false;
+    i = (i + 1) % words.length;
+  }
+
+  // Delete faster
+  if (deleting && j > 0) speed = 50;
+
+  setTimeout(type, speed);
+}
+
+type();
 
 
 
-        const words = ["Web Developer..!", "Frontend Developer..!", ]; // dynamic words
-                let i = 0;      // current word index
-                let j = 0;      // current character index
-                let deleting = false; // typing or deleting
-                const speed = 100;    // typing speed in ms
-                const pause = 1500;   // pause at end of word in ms
-
-                const dynamicText = document.getElementById("dynamic-text");
-
-                function type() {
-                const currentWord = words[i];
-
-                if (!deleting) {
-                    // লিখে যাওয়া
-                    dynamicText.textContent = currentWord.slice(0, j + 1);
-                    j++;
-                    if (j === currentWord.length) {
-                    // word শেষ হলে delete শুরু হবে pause পরে
-                    deleting = true;
-                    setTimeout(type, pause);
-                    return;
-                    }
-                } else {
-                    // মুছে ফেলা
-                    dynamicText.textContent = currentWord.slice(0, j - 1);
-                    j--;
-                    if (j === 0) {
-                    deleting = false;
-                    i = (i + 1) % words.length; // পরবর্তী word
-                    }
-                }
-                setTimeout(type, speed);
-                }
-
-            type(); // শুরু হচ্ছে টাইপিং
 
         
         // Skills section logic (unchanged from last time)
