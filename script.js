@@ -42,7 +42,7 @@ menuItems.forEach(item => {
 
 
 
-        const words = ["Web Developer", "UI Designer", ]; // dynamic words
+        const words = ["Web Developer..!", "Frontend Developer..!", ]; // dynamic words
                 let i = 0;      // current word index
                 let j = 0;      // current character index
                 let deleting = false; // typing or deleting
