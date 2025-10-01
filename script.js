@@ -1,12 +1,84 @@
 
     
+       
         // Mobile menu toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+       const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+const menuIcon = menuBtn.querySelector('svg');
+const menuItems = document.querySelectorAll('#mobile-menu-items a');
 
+let menuOpen = false;
+
+menuBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('-translate-x-full'); // slide in/out
+  menuOpen = !menuOpen;
+
+  // Change icon: Hamburger ↔ X
+  if (menuOpen) {
+    menuIcon.innerHTML = `
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M6 18L18 6M6 6l12 12" />
+    `;
+  } else {
+    menuIcon.innerHTML = `
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M4 6h16M4 12h16M4 18h16"/>
+    `;
+  }
+});
+
+// Close menu when any item clicked
+menuItems.forEach(item => {
+  item.addEventListener('click', () => {
+    mobileMenu.classList.add('-translate-x-full');
+    menuOpen = false;
+    menuIcon.innerHTML = `
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+      d="M4 6h16M4 12h16M4 18h16"/>
+    `;
+  });
+});
+
+
+
+
+        const words = ["Web Developer", "UI Designer", ]; // dynamic words
+                let i = 0;      // current word index
+                let j = 0;      // current character index
+                let deleting = false; // typing or deleting
+                const speed = 100;    // typing speed in ms
+                const pause = 1500;   // pause at end of word in ms
+
+                const dynamicText = document.getElementById("dynamic-text");
+
+                function type() {
+                const currentWord = words[i];
+
+                if (!deleting) {
+                    // লিখে যাওয়া
+                    dynamicText.textContent = currentWord.slice(0, j + 1);
+                    j++;
+                    if (j === currentWord.length) {
+                    // word শেষ হলে delete শুরু হবে pause পরে
+                    deleting = true;
+                    setTimeout(type, pause);
+                    return;
+                    }
+                } else {
+                    // মুছে ফেলা
+                    dynamicText.textContent = currentWord.slice(0, j - 1);
+                    j--;
+                    if (j === 0) {
+                    deleting = false;
+                    i = (i + 1) % words.length; // পরবর্তী word
+                    }
+                }
+                setTimeout(type, speed);
+                }
+
+            type(); // শুরু হচ্ছে টাইপিং
+
+        
         // Skills section logic (unchanged from last time)
         const skills = [
             { name: "HTML", icon: "fa-brands fa-html5", color: "bg-red-500", hoverColor: "hover:bg-red-600", description: "Standard markup language for web pages." },

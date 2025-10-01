@@ -4,10 +4,14 @@ html {
 }
 body{
     overflow-x: hidden;
-}     
+}  
+
+
+
+
    /* Outer div border animation */
 .border-gradient {
-  border-image: linear-gradient(90deg, #a27676, #df974e, #baba44, #1b891b, #19b2b2, #0000ff, #ff00ff, #ff0000) 1;
+  border-image: linear-gradient(90deg, #a27676, #df974e, #baba44) 1;
 }
 
 @keyframes gradient-move {
@@ -21,34 +25,113 @@ body{
     background-position: 0% 50%;
   }
 }
+/* Keyframes for gradient animation */
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
+/* Forward border gradient */
+.border-gradient {
+  border: 4px solid; /* border width */
+  border-image: linear-gradient(90deg, #a27676, #df974e, #baba44) 1;
+  border-image-slice: 1;
+  animation: gradient-move 10s linear infinite;
+}
+
+/* Keyframes for forward animation */
+@keyframes gradient-move {
+  0%   { border-image-source: linear-gradient(90deg, #a27676, #df974e, #baba44); }
+  50%  { border-image-source: linear-gradient(270deg, #a27676, #df974e, #baba44); }
+  100% { border-image-source: linear-gradient(90deg, #a27676, #df974e, #baba44); }
+}
+
+/* Reverse border gradient */
+.border-gradient-reverse {
+  border: 4px solid; /* border width */
+  border-image: linear-gradient(90deg, #a27676, #df974e, #baba44) 1;
+  border-image-slice: 1;
+  animation: gradient-move-reverse 10s linear infinite;
+}
+
+/* Keyframes for reverse animation */
+@keyframes gradient-move-reverse {
+  0%   { border-image-source: linear-gradient(90deg, #a27676, #df974e, #baba44); }
+  50%  { border-image-source: linear-gradient(-90deg, #a27676, #df974e, #baba44); }
+  100% { border-image-source: linear-gradient(90deg, #a27676, #df974e, #baba44); }
+}
+
+
+/* Reverse border gradient */
+.border-gradient-reverse {
+  border: 4px solid;
+  border-image: linear-gradient(90deg, #a27676, #df974e, #baba44) 1;
+  border-image-slice: 1;
+  animation: gradient-move-reverse 10s linear infinite;
+}
+
+/* Keyframes for reverse animation */
+@keyframes gradient-move-reverse {
+  0%   { border-image-source: linear-gradient(90deg, #a27676, #df974e, #baba44); }
+  50%  { border-image-source: linear-gradient(-90deg, #a27676, #df974e, #baba44); }
+  100% { border-image-source: linear-gradient(90deg, #a27676, #df974e, #baba44); }
+}
+
+/* gradient animation */
 .animate-gradient {
   background: linear-gradient(270deg, #de6868, #e2e297, #00ffff, #8080f6, #ff00ff);
   background-size: 400% 400%;
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: destination-out;
-  mask-composite: exclude;
-  mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  animation: gradient-move 10s linear infinite;
+  animation: gradient-move 12s linear infinite;
 }
-  /* এখানে CSS কোড যুক্ত করুন */
+
+.animate-gradient-reverse {
+  background: linear-gradient(270deg, #ff00ff, #8080f6, #00ffff, #e2e297, #de6868);
+  background-size: 400% 400%;
+  animation: gradient-move-reverse 10s linear infinite;
+}
+
+@keyframes gradient-move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes gradient-move-reverse {
+  0% { background-position: 100% 50%; }
+  50% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Forward color animation */
 .color-change-animation {
     animation: colorChange 7s linear infinite;
-        }
+}
 
-    @keyframes colorChange {
-            0% { color: red; }
-            25% { color: green; }
-            50% { color: blue; }
-            75% { color: yellow; }
-            100% { color: red; }
-        }
+@keyframes colorChange {
+    0%   { color: #ff4d4d; }  /* Soft Red */
+    25%  { color: #4dff88; }  /* Soft Green */
+    50%  { color: #4da6ff; }  /* Soft Blue */
+    75%  { color: #ffd24d; }  /* Soft Yellow */
+    100% { color: #ff4d4d; }  /* Soft Red */
+}
 
-   
+/* Reverse color animation */
+.color-change-animation-reverse {
+    animation: colorChangeReverse 7s linear infinite;
+}
+
+@keyframes colorChangeReverse {
+    0%   { color: #ff4d4d; }  /* Soft Red */
+    25%  { color: #ffd24d; }  /* Soft Yellow */
+    50%  { color: #4da6ff; }  /* Soft Blue */
+    75%  { color: #4dff88; }  /* Soft Green */
+    100% { color: #ff4d4d; }  /* Soft Red */
+}
+
+
+
+
 
 
 
